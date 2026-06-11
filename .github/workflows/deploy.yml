@@ -32,7 +32,7 @@ jobs:
       - name: Check knowledge repo token
         if: env.KNOWLEDGE_REPO_TOKEN == ''
         run: |
-          echo "Missing KNOWLEDGE_REPO_TOKEN secret. Create a fine-grained GitHub token with Contents read access to TuoWang02/Self-Knowledge, 550-ml/OJ, and 550-ml/20260204----, then add it to the Blog repository's Actions secrets."
+          echo "Missing KNOWLEDGE_REPO_TOKEN secret. Create a fine-grained GitHub token with Contents read access to TuoWang02/Self-Knowledge, 550-ml/OJ, and TuoWang02/Hand-Code, then add it to the Blog repository's Actions secrets."
           exit 1
       - name: Checkout knowledge vault as Quartz content
         uses: actions/checkout@v4
@@ -55,7 +55,7 @@ jobs:
       - name: Checkout handwritten code notes
         uses: actions/checkout@v4
         with:
-          repository: 550-ml/20260204----
+          repository: TuoWang02/Hand-Code
           ref: main
           path: content/02必会手撕/02手撕代码
           token: ${{ secrets.KNOWLEDGE_REPO_TOKEN }}
