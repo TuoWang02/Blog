@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  repository_dispatch:
+    types:
+      - knowledge-updated
   workflow_dispatch:
 
 permissions:
@@ -22,6 +25,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Remove bundled content
+        run: rm -rf content
+      - name: Checkout knowledge vault as Quartz content
+        uses: actions/checkout@v4
+        with:
+          repository: 550-ml/Self-Knowledge
+          ref: ${{ github.event.client_payload.source_branch || 'main' }}
+          path: content
+          token: ${{ secrets.KNOWLEDGE_REPO_TOKEN || github.token }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
