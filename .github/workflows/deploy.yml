@@ -30,7 +30,7 @@ jobs:
       - name: Checkout knowledge vault as Quartz content
         uses: actions/checkout@v4
         with:
-          repository: 550-ml/Self-Knowledge
+          repository: TuoWang02/Self-Knowledge
           ref: ${{ github.event.client_payload.source_branch || 'main' }}
           path: content
           token: ${{ secrets.KNOWLEDGE_REPO_TOKEN || github.token }}

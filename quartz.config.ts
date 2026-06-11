@@ -15,7 +15,7 @@ const config: QuartzConfig = {
     analytics: null,
     locale: "zh-CN",
     // Push to GitHub first, then replace this with `your-username.github.io/your-repo`
-    baseUrl: "550-ml.github.io/Blog",
+    baseUrl: "TuoWang02.github.io/Blog",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
