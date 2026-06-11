@@ -1,3 +1,225 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+:root {
+  --radius: 8px;
+  --pageWidth: 780px;
+  --sidePanelWidth: 300px;
+}
+
+body {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--secondary) 5%, transparent), transparent 22rem),
+    var(--light);
+  letter-spacing: 0;
+}
+
+body,
+section,
+article,
+p,
+li {
+  font-kerning: normal;
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+.page-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.page-title a {
+  color: var(--dark);
+}
+
+.article-title {
+  font-size: 2.15rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+article {
+  line-height: 1.82;
+  font-size: 1.02rem;
+}
+
+article h1,
+article h2,
+article h3 {
+  letter-spacing: 0;
+  scroll-margin-top: 5rem;
+}
+
+article h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+article h3 {
+  color: var(--darkgray);
+}
+
+article p,
+article li {
+  color: color-mix(in srgb, var(--dark) 88%, var(--gray));
+}
+
+pre {
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+}
+
+code {
+  border-radius: 5px;
+}
+
+blockquote {
+  border-left: 3px solid var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 7%, transparent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.content-meta {
+  color: var(--gray);
+}
+
+.breadcrumb-container {
+  font-size: 0.88rem;
+}
+
+.search-button,
+.darkmode,
+.readermode {
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--light) 84%, white);
+}
+
+.explorer {
+  font-size: 0.93rem;
+}
+
+.explorer .folder-button,
+.explorer a {
+  border-radius: 6px;
+}
+
+.explorer .folder-button:hover,
+.explorer a:hover {
+  background: color-mix(in srgb, var(--secondary) 9%, transparent);
+}
+
+.graph,
+.backlinks,
+.toc {
+  color: var(--darkgray);
+}
+
+.home-hero {
+  margin: 0.4rem 0 2rem;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--secondary) 14%, transparent), transparent 42%),
+    color-mix(in srgb, var(--light) 78%, white);
+}
+
+.home-kicker {
+  margin: 0 0 0.45rem;
+  color: var(--secondary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-hero h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.55rem;
+  line-height: 1.42;
+}
+
+.home-hero p:last-child {
+  margin: 0.65rem 0 0;
+  color: var(--darkgray);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 2.25rem;
+}
+
+.home-card {
+  display: flex;
+  min-height: 9.2rem;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--light) 82%, white);
+  color: var(--dark);
+  text-decoration: none;
+  transition:
+    border-color 0.16s ease,
+    transform 0.16s ease,
+    background 0.16s ease;
+}
+
+.home-card:hover {
+  border-color: color-mix(in srgb, var(--secondary) 60%, var(--lightgray));
+  background: color-mix(in srgb, var(--secondary) 8%, var(--light));
+  transform: translateY(-2px);
+}
+
+.home-card span {
+  width: fit-content;
+  padding: 0.14rem 0.48rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--secondary) 12%, transparent);
+  color: var(--secondary);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.home-card strong {
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.home-card em {
+  color: var(--darkgray);
+  font-style: normal;
+  line-height: 1.58;
+}
+
+footer {
+  color: var(--gray);
+}
+
+@media all and (max-width: 800px) {
+  .article-title {
+    font-size: 1.82rem;
+  }
+
+  article {
+    font-size: 1rem;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-card {
+    min-height: auto;
+  }
+}
